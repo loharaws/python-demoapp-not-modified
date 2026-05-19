@@ -1,0 +1,8 @@
+version: "3.5"
+
+services:
+  flask:
+    container_name: flask-app
+    image: python-demoapp:latest
+    ports:
+      - "5000:5000"
