@@ -3,11 +3,10 @@ FROM python:3.11-slim
 WORKDIR /app
 
 ARG srcDir=src
-COPY $srcDir/requirements.txt .
-COPY $srcDir/app ./app
+COPY $srcDir/requirements.txt ./app
 RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
+COPY $srcDir/app ./app
+COPY $srcDir/run.py ./app
 
 EXPOSE 5000
 
